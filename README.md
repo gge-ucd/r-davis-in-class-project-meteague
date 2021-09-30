@@ -1,4 +1,4 @@
 Macall Teague
 she/her/hers
-Landscape Ecology, RS
+Landscape Ecology, Remote Sensing
 
