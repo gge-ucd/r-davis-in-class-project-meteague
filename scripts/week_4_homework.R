@@ -29,12 +29,13 @@ view(biggest_critters)
 ### find where NAs are concentrated, found most in rodents ###
 surveys_NAs <- surveys[is.na(surveys$weight),]
 sapply(surveys_NAs, table)
-  
+
 ### remove NAs, add column #
 avwt <- aggregate(weight ~ sex+species, surveys[!is.na(surveys$weight),],mean)
 surveys_avg_weight <- merge(surveys[!is.na(surveys$weight),],
                       avwt,
-                      by =c("sex", "species"))
+                      by =c("sex", "species"),
+                      all.x = T, all.y = F)
 colnames(surveys_avg_weight)[colnames(surveys_avg_weight)=="weight.x"] <- "weight"
 colnames(surveys_avg_weight)[colnames(surveys_avg_weight)=="weight.y"] <- "avg_weight"
 

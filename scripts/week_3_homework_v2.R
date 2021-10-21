@@ -26,5 +26,5 @@ surveys_base[!is.na(surveys_base$weight),]
 challenge_base <- surveys_base[which(surveys_base$weight>150),]
 View(challenge_base)
 
-## would remove NAs ##
+## subset weights greater than 150 ##
 surveys_base$weight > 150
