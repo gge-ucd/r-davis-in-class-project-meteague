@@ -41,6 +41,15 @@ gapminder %>% filter(country %in% countries) %>%
   geom_jitter(alpha = 0.5, color = "green") +
   theme_minimal() +
   ggtitle("Life Expectancy of Five Countries") +
-  theme(plot.title = element_text()) +
   xlab("Country") + ylab("Life Expectancy")
 
+# from help section - can center title by ading plot.title = element_text(hjust = 0.5)
+
+gapminder %>% filter(country %in% countries) %>% 
+  ggplot(aes(x = country, y = lifeExp)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.5, color = "green") +
+  theme_minimal() +
+  ggtitle("Life Expectancy of Five Countries") +
+  theme(plot.title = element_text(hjust = 0.5))
+  xlab("Country") + ylab("Life Expectancy")
