@@ -15,7 +15,7 @@ df_new <- gapminder %>% filter(year %in% c(2002, 2007)) %>%
 ggplot(df_new) + facet_wrap(~ continent, scales = 'free') +
   geom_bar(aes(x = reorder(country, popDiff), y = popDiff),stat = 'identity') +
   labs(x = 'Country', y= 'Change in Population 2002-2007') + 
-  theme_light() +
+  theme_linedraw() +
   theme(axis.text.x = element_text(colour = 'blue', angle = 45, hjust = 1)) 
 
 
